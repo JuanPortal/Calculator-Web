@@ -18,10 +18,11 @@ class Calculator {
     appendNumber(number) {
         if (number === "." && this.current.includes(".")) return
         if (number === "0" && this.current.slice(0) === "0") return
-        if (number === "0" && this.current === "0") {
-            this.current = this.current.slice(1, number.length)
-            updateDisplay()
-        }
+        // TO FIX LATER: Avoid having 00 as input
+        // if (number === "0" && this.current === "0") {
+        //     this.current = this.current.slice(1, number.length)
+        //     updateDisplay()
+        // }
         this.current += number
     }
 
