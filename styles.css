@@ -1,25 +1,33 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: Poppins, sans-serif;
 }
 
-body{
-    height: 92vh;
+body {
+    height: 100vh;
     background: linear-gradient(to bottom left, rgb(123, 28, 28), rgb(158, 46, 158), pink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.calculator-grid{
+.calculator-grid {
     display: grid;
     justify-content: center;
     align-content: center;
-    height: 100%;
+    width: 60%;
+    max-width: 60%;
+    height: 92vh;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-button{
+button {
     cursor: pointer;
     font-size: 1.9em;
     border: 1px solid white;
@@ -28,15 +36,15 @@ button{
     font-weight: bold;
 }
 
-button:hover{
+button:hover {
     background-color: rgb(112, 78, 138, 0.8);
 }
 
-.span-two{
+.span-two {
     grid-column: span 2;
 }
 
-.output{
+.output {
     grid-column: 1/-1;
     background-color: rgb(0, 0, 0, .75);
     display: flex;
@@ -48,31 +56,57 @@ button:hover{
     word-break: break-all;
 }
 
-.output .previous{
+.output .previous {
     color: rgb(255, 255, 255, .65);
 }
 
-.output .current{
+.output .current {
     color: rgb(255, 255, 255);
     font-size: 1.9em;
 }
 
 /* FOOTER */
-footer{
+
+footer {
     background-color: black;
     color: white;
+    width: 100%;
     height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-footer a{
+footer a {
     margin-left: 6px;
     text-decoration: none;
     color: #800040;
 }
 
-footer a:hover{
+footer a:hover {
     font-size: large;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 400px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 60px);
+    }
+
+    button {
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 800px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+    }
+
+    button {
+        font-size: 1.7em;
+    }
 }
